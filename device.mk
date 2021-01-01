@@ -52,3 +52,7 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# Timezone Data
+PRODUCT_PACKAGES += \
+    tzdata_twrp
