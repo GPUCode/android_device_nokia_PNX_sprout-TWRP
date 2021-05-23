@@ -117,6 +117,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 # TWRP Configuration
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 RECOVERY_SDCARD_ON_DATA := true
+BOARD_PROVIDES_GPTUTILS := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 100
