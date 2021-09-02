@@ -132,6 +132,8 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_INCLUDE_REPACKTOOLS := true
 TW_HAS_EDL_MODE := true
+TW_Y_OFFSET := 89
+TW_H_OFFSET := -89
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
