@@ -30,6 +30,14 @@ import /init.recovery.qcom_decrypt.rc
 on init
     write /sys/class/backlight/panel0-backlight/brightness 200
 
+on boot
+    # Workaround for adb not coming up
+    setprop sys.usb.config mtp,adb
+    setprop sys.usb.config adb
+
+    # Enable OTG
+    write /sys/class/power_supply/usb/otg_switch 1
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
