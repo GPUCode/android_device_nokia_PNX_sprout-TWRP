@@ -39,6 +39,12 @@ TARGET_USES_64_BIT_BINDER := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := PNX_sprout
 
+# Platform
+TARGET_BOARD_PLATFORM := sdm710
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno616
+QCOM_BOARD_PLATFORMS += $(TARGET_BOARD_PLATFORM)
+
 # Crypto
 TW_INCLUDE_CRYPTO := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
@@ -78,7 +84,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hidl.base@1.0 \
-    android.hardware.boot@1.0 \
+    bootctrl.$(TARGET_BOARD_PLATFORM) \
     ashmemd \
     ashmemd_aidl_interface-cpp \
     libashmemd_client \
@@ -103,10 +109,6 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpcrecpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
-
-# Platform
-TARGET_BOARD_PLATFORM := sdm710
-TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
